@@ -2,11 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 33: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
-(Perhaps you left out a " at the end of the first line.)
-    "Но что,если...Что,если солдат незнакомый мне,по другую сторону баррикад, страшится
+File "game/script.rpy", line 11: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
+    "Левый солдат:" "Гото-о-вы, друг, еще как готовы! Покажем этим круасаночным солдатикам петровскую мощь!"
     ^
-          также,и сомнения вторглись в его душу...Ведь люди одинаковы везде...Не понимаю..."
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Thu Dec 17 20:43:29 2020
+Sat Dec 19 21:52:04 2020
