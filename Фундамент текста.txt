@@ -1,25 +1,38 @@
 #Персы
-define Alex = Character('Александр', color="#963c00")
-define Brain_of_Alex = Character('Александр', color="#539499")
-define Captain = Character('Командир', color="#6b0000")
-define Abel = Character('Абель', color="#ff3838")
-define Soldier = Character('Солдат', color="#363223")
-define Soldiers = Character('Солдаты', color="#211f15")
-define Agata = Character('Солдаты', color="#750039")
-define Priest = Character('Cвященник', color="#a8941e")
-define Taras = Character ('Тарас Шевченко', color="#8c3300")
-define Doctor = Character ('Фельдшер', color="#a10000")
-define StepDoctor = Character ('Помощник Фельдшера', color="#7a1515")
-
+define Alex = Character('{i}Александр{/i}', color="#963c00")
+define Brain_of_Alex = Character('{i}Александр{/i}', color="#539499")
+define Captain = Character('{i}Командир{/i}', color="#6b0000")
+define Abel = Character('{i}Абель{/i}', color="#ff3838")
+define Soldier = Character('{i}Солдат{/i}', color="#363223")
+define Soldiers = Character('{i}Солдаты{/i}', color="#211f15")
+define Agata = Character('{i}Солдаты{/i}', color="#750039")
+define Priest = Character('{i}Cвященник{/i}', color="#a8941e")
+define Taras = Character ('{i}Тарас Шевченко{/i}', color="#8c3300")
+define Doctor = Character ('{i}Фельдшер{/i}', color="#a10000")
+define StepDoctor = Character ('{i}Помощник Фельдшера{/i}', color="#7a1515")
+#Music and Sounds
+define audio.MiddleCentWar = "Y:/Choice Of Life/game/audio/Sounds/MiddleCentWar.mp3"
+define audio.MainTheme = "Y:/Choice Of Life/game/audio/Music/MainTheme.mp3"
+define audio.Hearth = "Y:/Choice Of Life/game/audio/Sounds/Hearth.mp3"
+define audio.HeWiWa = "Y:/Choice Of Life/game/audio/Sounds/HeWiWa.mp3"
+define audio.RunWithHearth = "Y:/Choice Of Life/game/audio/Sounds/RunWithHearth.mp3"
+define audio.Birds = "Y:/Choice Of Life/game/audio/Sounds/Birds.mp3"
 #Начало игры
 label start:
+    scene MainTheme
+    with fade
     jump War
 label War:
-    Captain "{i}Братья мои, внимайте же меня все в сей момент! С минуты на минуту падем мы от французского штыка на незнакомую нам землю, мы все знаем это... Но, чтоб меня черт взял, именно за этим мы и пришли на земли вражьи!{/i}"
-    Captain "{i}Я хочу спросить вас...Готовы ли вы положить свои молодые судьбы за незыблемость отчизны нашей, за долгую жизнь матерей и сестер наших, за нашего светлого государя?! Не содрагаются ли сердца в вашей крепкой груди?! Не хладеют ли ваши пламенные головы?!{/i}"
+    scene war
+    play music MiddleCentWar
+    Captain "{i}Братья мои, внимайте же меня все в сей момент! С минуты на минуту падем мы от французского штыка на незнакомой нам землю, мы все знаем это... Но, чтоб меня черт подери, именно за этим мы и пришли на земли вражьи!{/i}"
+    Captain "{i}Я хочу спросить вас...Готовы ли вы положить свои молодые судьбы за незыблемость отчизны нашей, за долгую жизнь матерей и сестер наших, за нашего светлого императора?! Не содрагаются ли сердца в вашей крепкой груди?! Не хладеют ли ваши пламенные головы?!{/i}"
     Captain "{i}Родина не поможет нам... Мы вдали от наших родных равнин и лесов... В этом сражении надейтесь только на свой клинок, порох на полке ваших ружей и на ваше хладнокровие... Братья... Мы обязаны показать европейской вражине, что русскому бойцу в радость самое настоящее пекло!{/i}"
     Soldier "{i}Гото-о-вы, друг, еще как готовы! Покажем этим круасаночным солдатикам петровскую мощь!{/i}"
     Soldiers "{i}Да! Покажем! В бой же, братья!{/i}"
+    scene war
+    with fade
+    play music HeWiWa
     Brain_of_Alex "{i}О боже... Неужели правда это все... Я не смогу человека жизни лишить...{/i}"
     Brain_of_Alex "{i}Нет! Вздор! Я обязан! За тем ведь я и здесь! Это жестокие захватчики! Я должен ответить им той же монетой... Но что, если...{/i}"
     Brain_of_Alex "{i}Что, если солдат незнакомый мне, по другую сторону баррикад, страшится также, и сомнения вторглись в его душу...Ведь люди одинаковы везде...Не понимаю... Мир сошел с ума...{/i}"
@@ -28,21 +41,25 @@ label War:
 label War2:
     Brain_of_Alex "{i}Надо же...Даже повоевать не успел, а уже словил свинца в свою плоть...Что ж делать теперь...{/i}"
     menu:
-        "{i}Спасаться{/i}":
+        "{i}{color=#160d26}Спасаться{/color}{/i}":
+            play music RunWithHearth
             Brain_of_Alex "{i}Нет...Война - совсем не мое! Поскорей бы убраться с этой мясорубки...Вижу брешь! Туда скорей!{/i}"
             Brain_of_Alex "{i}Фух...Вроде визг клинков начал утихать...Ох, как же плохо...Сейчас свалюсь...Нужно до видного места дойти...{/i}"
             Brain_of_Alex "{i}Кажется, я вижу дорогу! Скорей туда...По мере моих способностей, конечно...{/i}"
             jump France
-        "{i}Герои не убегают, поджав хвост{/i}":
+        "{i}{color=#160d26}Герои не убегают, поджав хвост{/color}{/i}":
             Alex "{i}Смерть иродам! Добьем желчь французскую!{/i}"
             Alex "{i}Ахг... Дурак.. Как же тут стало здесь холодно...Не могу и шевельнуться же... Сука, не могу и моргнуть...{/i} "
             Alex "{i}Хех… Мечтал о типичной дворянской скучной жизни у камина после этого всего, а в итоге... Сблевал всю свою кровь в след в грязи от французского сапога...{/i}"
             Alex "{i}Жизнь - интересная штука... В вечной скуке мира иного не будет хватать мне её забав и веселий... Очень кружится голова... {/i}"
             Alex "{i}Мне страшно...{/i}"
             jump die1
-        "{i}К врачами!{/i}":
+        "{i}{color=#160d26}К врачам!{/color}{/i}":
             jump Medics1
 label France:
+    scene France
+    with fade
+    play music Birds
     Abel "{i}Réveille-toi pauvre chose...(Просыпайся,бедняжка...){/i}"
     Abel "{i}Vous avez déjà l'air mieux ... Pour être honnête ... Vous êtes généralement très beau ...(Ты уже получше выглядишь, а если честно, ты... Ты вообще очень красивый...){/i}"
     Agata "{i}Abel, tu m'as promis que tu m'apporterais du lait pour le souper! Tu ne peux pas tenir parole? Apporte-moi du lait, ma fille! ( Абель, ты обещала мне, что ты принесешь мне молоко для ужина! Неужели ты не держишь слово? Принеси мне молока, доченька!){/i}"
