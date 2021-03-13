@@ -1,5 +1,6 @@
 #Персы
 define Alex = Character('{i}Александр{/i}', color="#963c00")
+###Тут мысли Александра
 define Brain_of_Alex = Character('{i}Александр{/i}', color="#539499")
 define Captain = Character('{i}Командир{/i}', color="#6b0000")
 define Abel = Character('{i}Абель{/i}', color="#ff3838")
