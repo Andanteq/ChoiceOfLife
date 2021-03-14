@@ -2,7 +2,7 @@
 define Alex = Character('{i}Александр{/i}', color="#963c00")
 ###Тут мысли Александра
 define Brain_of_Alex = Character('{i}Александр{/i}', color="#539499")
-define Captain = Character('{i}Командир{/i}', color="#6b0000")
+define Captain = Character('{i}Командир{/i}', color="#75000e")
 define Abel = Character('{i}Абель{/i}', color="#ff3838")
 define Soldier = Character('{i}Солдат{/i}', color="#363223")
 define Soldiers = Character('{i}Солдаты{/i}', color="#211f15")
@@ -11,6 +11,7 @@ define Priest = Character('{i}Cвященник{/i}', color="#a8941e")
 define Taras = Character ('{i}Тарас Шевченко{/i}', color="#8c3300")
 define Doctor = Character ('{i}Фельдшер{/i}', color="#a10000")
 define StepDoctor = Character ('{i}Помощник Фельдшера{/i}', color="#7a1515")
+define Starter = Character ('Starter', color = "#000000")
 #Music and Sounds
 define audio.MiddleCentWar = "Y:/Choice Of Life/game/audio/Sounds/MiddleCentWar.mp3"
 define audio.MainTheme = "Y:/Choice Of Life/game/audio/Music/MainTheme.mp3"
@@ -18,13 +19,27 @@ define audio.Hearth = "Y:/Choice Of Life/game/audio/Sounds/Hearth.mp3"
 define audio.HeWiWa = "Y:/Choice Of Life/game/audio/Sounds/HeWiWa.mp3"
 define audio.RunWithHearth = "Y:/Choice Of Life/game/audio/Sounds/RunWithHearth.mp3"
 define audio.Birds = "Y:/Choice Of Life/game/audio/Sounds/Birds.mp3"
+define audio.Zvon = "Y:/Choice Of Life/game/audio/Sounds/Zvon.mp3"
 #Начало игры
 label start:
     scene MainTheme
     with fade
+    jump PreHistory
+label PreHistory:
+    scene black
+    play music Zvon
+    Starter "{i}После Битвы при Бородино и сдачи Москвы русской армией в пользу Наполеона генерал Кутузов предпринял меры, которые окончательно перетянули инициативу на российскую армию.{/i}"
+    Starter "{i}С тех пор французы могли лишь отступать, принимая удары от армии Российской Империи и союзников.{/i}"
+    Starter "{i}Но без конца французы отступать, к их огромному сожалению, не могли - их спины уткнулись в их последний рубеж - Париж.{/i}"
+    Starter "{i}Однако и этот рубеж не стал их спасением: французская армия пала под натиском России, Пруссии, Вюртемберга и Австрии{/i}"
+    Starter "{i}Огромный вклад в эту победу со стороны наших соотечественников из рядов армии невозможно переоценить, они являются историческими героями наравне с Кутузовым{/i}"
+    Starter "{i}Каждый человек, каждая личность внесла свою лепту в победу над врагом{/i}"
+    Starter "{i}Каждый рисковал своей жизнью, возможностью увидеть свою семью, друзей{/i}"
+    Starter "{i}Одним из таких героев был Александр - рядовой 1-ого пехотного корпуса армии Российской Империи...{/i}"
     jump War
 label War:
     scene war
+    with fade
     play music MiddleCentWar
     Captain "{i}Братья мои, внимайте же меня все в сей момент! С минуты на минуту падем мы от французского штыка на незнакомой нам землю, мы все знаем это... Но, чтоб меня черт подери, именно за этим мы и пришли на земли вражьи!{/i}"
     Captain "{i}Я хочу спросить вас...Готовы ли вы положить свои молодые судьбы за незыблемость отчизны нашей, за долгую жизнь матерей и сестер наших, за нашего светлого императора?! Не содрагаются ли сердца в вашей крепкой груди?! Не хладеют ли ваши пламенные головы?!{/i}"
@@ -58,7 +73,7 @@ label War2:
         "{i}{color=#160d26}К врачам!{/color}{/i}":
             jump Medics1
 label France:
-    scene France
+    scene Double
     with fade
     play music Birds
     Abel "{i}Réveille-toi pauvre chose...(Просыпайся,бедняжка...){/i}"
