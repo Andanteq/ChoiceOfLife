@@ -27,7 +27,7 @@ define audio.Hearth = "Y:/Choice Of Life/game/audio/Sounds/Hearth.mp3"
 define audio.HeWiWa = "Y:/Choice Of Life/game/audio/Sounds/HeWiWa.mp3"
 define audio.RunWithHearth = "Y:/Choice Of Life/game/audio/Sounds/RunWithHearth.mp3"
 define audio.Birds = "Y:/Choice Of Life/game/audio/Sounds/Birds.mp3"
-define audio.Zvon = "Y:/Choice Of Life/game/audio/Sounds/Zvon.mp3"
+define audio.Zvon = "Y:/Choice Of Life/game/audio/Sounds/purga.mp3"
     #Начало игры
 label start:
 
@@ -407,7 +407,7 @@ label pered:
     Milorad "Я сам охотно желал того, чтобы Константин стал императором, но что поделать, он отрёкся от престола."
     Milorad  "Я видел его отречение, поверьте мне. Стал бы я вам врать?-"
     "{i}Из рядов вышел Евгений Оболенский, русский офицер.{/i}"
-    Obolenski  "Граф Милорадович, отъедьте, мы не хотим вам приносить вреда, мы всетаки уважаем вас."
+    Obolenski  "Граф Милорадович, отъедьте, мы не хотим вам приносить вреда, мы все-таки уважаем вас."
     Obolenski   "Прошу вас, отъедьте вы обратно..-"
     "{i}Милорадович продолжал говорить, игнорируя Оболенского.{/i}"
     Milorad  "Да как вы не понимаете!! Константин отрекся от престола!"
