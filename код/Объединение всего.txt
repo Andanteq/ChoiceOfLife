@@ -18,7 +18,8 @@ define Yamshik = Character ('Ямщик', color="#B00000")
 #нужные персы:
 #жена александра"Лиза"
 #слуга александра"Георгий"
-
+#Characters
+image general = "Y:/Choice Of Life/game/images/Sprites/Captain normal.png"
 
 #Music and Sounds
 define audio.MiddleCentWar = "Y:/Choice Of Life/game/audio/Sounds/MiddleCentWar.mp3"
@@ -55,6 +56,7 @@ label War:
     scene war
     with fade
     play sound MiddleCentWar
+    show general at right
     Captain "Братья мои, внимайте же меня все в сей момент! С минуты на минуту падем мы от французского штыка на незнакомой нам землю, мы все знаем это... Но, чтоб меня черт подери, именно за этим мы и пришли на земли вражьи!"
     Captain "Я хочу спросить вас... Готовы ли вы положить свои молодые судьбы за незыблемость отчизны нашей, за долгую жизнь матерей и сестер наших, за нашего светлого императора?!"
     Captain "Не содрагаются ли сердца в вашей крепкой груди?! Не хладеют ли ваши пламенные головы?!"
@@ -521,3 +523,4 @@ label die1:
     "Вас постигла неудача..."
     stop sound
     return
+
