@@ -23,10 +23,7 @@ define Lisa = Character ('Лизонька', color="#ff3838")
 define Geo = Character ('Георгий', color="#ff3838")
 define Aly = Character ('Алексей', color="#ff3838")
 define Grig = Character ('Гриша', color="#ff3838")
-#нужные персы:
-#жена александра"Лиза"
-#слуга александра"Георгий"
-#Characters
+
 
 #Music and Sounds
 define audio.Main = "audio/Music/main.mp3"##ready
