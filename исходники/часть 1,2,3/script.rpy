@@ -36,13 +36,13 @@ define audio.Chezh = "audio/Music/Chezh.mp3"
 define audio.povozka = "audio/Sounds/ezda_povozki.mp3"##ready
 define audio.vistrel = "audio/Sounds/vistrel.mp3"##ready
 define audio.kriki = "audio/Sounds/kriki.mp3"##ready
-define audio.bint = "audio/Sounds/binti.mp3"
-define audio.holodnoe_oruzie = "audio/Sounds/holodnoe_oruzie.mp3"
+define audio.bint = "audio/Sounds/binti.mp3"##ready
+define audio.holodnoe_oruzie = "audio/Sounds/holodnoe_oruzie.mp3"##ready
 define audio.gorod = "audio/Sounds/shum_goroda.mp3"##ready
 define audio.tolpa = "audio/Sounds/vozglas_tolpi.mp3"
 define audio.zvon = "audio/Sounds/zvon.mp3"
-define audio.Purga = "audio/Sounds/purga.mp3"
-define audio.padenie ="audio/Sounds/padenie.mp3"
+define audio.Purga = "audio/Sounds/purga.mp3"##ready?
+define audio.padenie ="audio/Sounds/padenie.mp3"##ready?
 
 
 
@@ -98,6 +98,8 @@ label War2:
         "{color=#160d26}Герои не убегают, поджав хвост{/color}":
             Alex "Смерть иродам! Добьем желчь французскую!"
             "Александр побежал в атаку как разъяренный медведь, махая шашкой с неистовой силой, но в жизни нельзя остаться безнаказанным за такую дерзость-Александр оступился и лезвие вражеского клинка с хрустом вошло в грудную клетку воина..."
+            play sound holodnoe_oruzie
+            $ renpy.sound.set_volume(2)
             "Это были его последние минуты. Кровь хлестнуло на его одежду, поступила тёмной густой нитью изо рта...Солдат не успел до конца осознать произосшедшее и умер в слепом, страшном, холодном невидении..."
             jump die1
         "{color=#160d26}К врачам!{/color}":
@@ -149,6 +151,8 @@ label Medics1:
 label Medics2:
     scene black
     with Fade(2.5,0,2.5)
+    play sound bint
+    $ renpy.sound.set_volume(3)
     Doctor "Ох и угораздило же тебя... Быстрей ко мне его! Ложись-ка на землю, сейчас тебя подправим... Эй, дайте ему водки! И... И мне тоже!"
     StepDoctor "Может... Может не сейчас?"
     Doctor "О, господи! Дай мне водки, ты думаешь я её пить стану? Как тебя такого узколобого вообще во врачи взяли?"
@@ -232,6 +236,8 @@ label a5:
     "Юноша толкает солдата, но тот был в броне, поэтому ничего не вышло"
     Dude "Dej od ni ruce! (Убери от нее руки!)"
     Soldier "Куда ты лезешь, идиот?! Я тебе кишки выпущу!"
+    play sound holodnoe_oruzie
+    $ renpy.sound.set_volume(2)
     "Cолдат взмахнул мечом и в точности выполнил своё обещание..."
     "Все с ужасом ахнули"
     Soldier "Ненормальный... Я ведь говорил, чтобы он не лез... Уходим отсюда!"
@@ -586,10 +592,12 @@ label zad:
             Brain_of_Alex "Страшно…"
             Brain_of_Alex "Я услышал позади себя звуки. Мне показалось, что это копыта лошади ударяются об каменную кладку."
             Brain_of_Alex "Надо бежать. Бежать не оглядываясь. Быстрее! Только бежать!"
-            "*металлический звук*"
+            play sound holodnoe_oruzie
+            $ renpy.sound.set_volume(2)
             Brain_of_Alex "По телу прошел холодок. Я перестал чувствовать руку."
             Brain_of_Alex "Я взглянул в сторону. Справа от меня на лошади скакал казак с шашкой в руках. Он замахнулся шашкой и…."
-            "*металлический звук*"
+            play sound holodnoe_oruzie
+            $ renpy.sound.set_volume(2)
             Brain_of_Alex "Я увидел что-то странное. Впереди меня лежало тело, без головы. Это было... мое тело."
             jump smert
         "Лежать":
