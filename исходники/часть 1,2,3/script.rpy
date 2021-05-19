@@ -1,4 +1,4 @@
-﻿#Персы
+#Персы
 define Alex = Character('Александр', color="#963c00")
 ###Тут мысли Александра
 define Brain_of_Alex = Character('Александр', color="#539499")
@@ -40,12 +40,8 @@ define audio.tolpa = "audio/Sounds/vozglas_tolpi.mp3"
 define audio.zvon = "audio/Sounds/zvon.mp3"
 define audio.Purga = "audio/Sounds/purga.mp3"##ready?
 define audio.padenie ="audio/Sounds/padenie.mp3"##ready?
-define audio.birds = "audio/Sounds/Penie_ptich.mp3"
 
-image keanu = "images/keanu2.png"
-image tolpa = "images/unnamed.jpg"
-image pole = "images/pole.jpg"
-image died = "images/Died.jpg"
+
 
 
     #Начало игры
@@ -67,8 +63,7 @@ label PreHistory:
     jump War
 label War:
     scene pole
-    show keanu at left
-    with dissolve
+    with Fade(2.5,0,2.5)
     play music Chezh fadein 2.0 fadeout 2.0
     $ renpy.music.set_volume(0.1)
     Captain "Братья мои, внимайте же меня все в сей момент! С минуты на минуту падем мы от французского штыка на незнакомой нам землю, мы все знаем это... Но, чтоб меня черт подери, именно за этим мы и пришли на земли вражьи!"
@@ -76,15 +71,10 @@ label War:
     Captain "Не содрагаются ли сердца в вашей крепкой груди?! Не хладеют ли ваши пламенные головы?!"
     Captain "Родина не поможет нам... Мы вдали от наших родных равнин и лесов... В этом сражении надейтесь только на свой клинок, порох на полке ваших ружей и на ваше хладнокровие..."
     Captain "Братья... Мы обязаны показать европейской вражине, что русскому бойцу в радость самое настоящее пекло!"
-    show tolpa:
-        xalign 1.0 yalign 0.5
     Soldier "Гото-о-вы, друг, еще как готовы! Покажем этим круасаночным солдатикам петровскую мощь!"
     play sound kriki fadein 1.0 fadeout 0.5
     $ renpy.sound.set_volume(0.2)
     Soldiers "Да! Покажем! В бой же, братья!"
-    hide keanu
-    hide tolpa
-    hide pole
     stop sound fadeout 2.0
     Brain_of_Alex "О боже... Неужели правда это все... Я не смогу человека жизни лишить..."
     Brain_of_Alex "Нет! Вздор! Я обязан! За тем ведь я и здесь! Это жестокие захватчики! Я должен ответить им той же монетой... Но что, если..."
@@ -94,18 +84,22 @@ label War:
     Brain_of_Alex "Ах!"
     jump War2
 label War2:
+    scene pole_posle_boya
+    with Fade(2.5,0,2.5)
     Brain_of_Alex "Надо же... Даже повоевать не успел, а уже словил свинца в свою плоть... Что ж делать теперь..."
     menu:
         "Спасаться":
             Brain_of_Alex "Нет! Война - совсем не мое! Поскорей бы убраться с этой мясорубки... Вижу брешь! Туда скорей!"
             Brain_of_Alex "Фух... Вроде визг клинков начал утихать... Ох, как же плохо... Сейчас свалюсь... Нужно до видного места дойти."
             Brain_of_Alex "Кажется, я вижу дорогу! Скорей туда... По мере моих способностей, конечно..."
+            scene black
             jump France
         "Герои не убегают, поджав хвост":
             Alex "Смерть иродам! Добьем желчь французскую!"
             "Александр побежал в атаку как разъяренный медведь, махая шашкой с неистовой силой, но в жизни нельзя остаться безнаказанным за такую дерзость-Александр оступился и лезвие вражеского клинка с хрустом вошло в грудную клетку воина..."
             play sound holodnoe_oruzie
             $ renpy.sound.set_volume(2)
+            scene black
             "Это были его последние минуты. Кровь хлестнуло на его одежду, поступила тёмной густой нитью изо рта...Солдат не успел до конца осознать произосшедшее и умер в слепом, страшном, холодном невидении..."
             jump die1
         "К врачам!":
@@ -113,10 +107,6 @@ label War2:
 label France:
     play music Main fadein 3.0 fadeout 3.0
     $ renpy.music.set_volume(0.1)
-    play sound birds fadein 2.0 fadeout 1.0 loop
-    $ renpy.sound.set_volume(0.2)
-    scene france
-    with Fade(2.5,0,2.5)
     Abel "Reveille-toi pauvre chose... (Просыпайся,бедняжка...)"
     Abel "Vous avez deja l'air mieux... Pour etre honnete... Vous etes generalement tres beau. (Ты уже получше выглядишь, а если честно, ты... Ты вообще очень красивый.)"
     Agata "Abel, tu m'as promis que tu m'apporterais du lait pour le souper! Tu ne peux pas tenir parole? Apporte-moi du lait, ma fille! ( Абель, ты обещала мне, что ты принесешь мне молоко для ужина! Неужели ты не держишь слово? Принеси мне молока, доченька!)"
@@ -125,6 +115,8 @@ label France:
     Brain_of_Alex "Что за... Почему тут так жарко? Я не помню, чтобы я собирался на юг... Я совсем не у себя дома."
     Brain_of_Alex "Последнее, что я помню: звон клинков, пороховые облака на поле битвы, крики... Много грязи и крови... А потом удар, вспышка, колосья бьют по шее, звон в ушах и свое глубокое дыхание... И темнота..."
     Brain_of_Alex "Я, кажется, должен был умереть, но на ад это не очень-то и похоже... Что?! Не верю своим ушам! Это французский! Я во Франции?! Боже, помилуй, куда меня занесло..."
+    scene komnata_anabel
+    with Fade(2.5,0,2.5)
     Alex "Кто ты???"
     Abel "Hourra, tu es reveille! J'etais tellement inquiete! Plus precisement... Vous ne pouvez pas vous tenir debout, vous etes toujours malade.."
     Abel "Asseyez-vous sur le lit, dites-moi tout enfin... ( Ура, вы проснулись! Я так переживала! Точнее... Вам нельзя стоять на ногах, вы еще больны... Садитесь на кровать, расскажите мне все наконец...)"
@@ -138,7 +130,7 @@ label France:
     Alex "Vous avez... Vous avez de tres beaux yeux, Abel, le saviez-vous? ( У вас... У вас очень красивые глазa, Абель, вы знали?..)"
     jump wedding
 label wedding:
-    scene church
+    scene tserkov
     with Fade(2.5,0,2.5)
     play sound zvon fadein 1.0 fadeout 1.0
     $ renpy.sound.set_volume(0.4)
@@ -194,6 +186,8 @@ label a3:
     Alex "Война всегда меня манила, её запах пороха,визг мечей и рев людей... Но слишком высока цена за эти эмоции...Слишком высока..."
     play sound povozka fadein 1.0 fadeout 3.0
     "{i}Повозка въезжает в Прагу проездом{/i}"
+    scene praga
+    with Fade(2.5,0,2.5)
     stop sound
     play sound gorod fadein 1.0 fadeout 3.0
     Yamshik "Ну как вам здесь, в Европе то?"
@@ -225,8 +219,6 @@ label a3:
         jump a5
 
 label a5:
-    scene black
-    with Fade(4.0,0,4.0)
     play sound gorod
     Alex "Ох, ну сколько же еще ехать...Вот приеду в Петербург - как разг..."
     stop sound
@@ -268,17 +260,20 @@ label a5:
 
 label a6:
     "Герой приехал"
+    scene komnata_alexandra
+    with Fade(1.0,0,1.0)
     Brain_of_Alex "Кх-кх-кх... Ох, не хватало ещё и простудится перед службой. С самого утра день не задался. Чую я, будет что-то неладное..."
     "Александр встал с кровати и идёт умываться"
     Brain_of_Alex "Может мне остаться дома?"
 
     menu:
         "Ехать в Петербург":
+            scene black
+            with Fade(1.0,0,1.0)
             jump peterburg
         "Остаться дома":
             jump suesid
 label suesid:
-    scene black
     Brain_of_Alex "Не пойду я никуда, иначе кто знает, что со мной может произойти? А ведь у меня жена, сын... Пойду-ка лучше под плед. Ах, как стыдно будет перед товарищами..."
     Brain_of_Alex "Но, как говорила моя няня, задыхаясь от пронзительного больного кашля: Здоровье важнее, Сашенька... Нет дороже сокровища и дара божьего, чем крепкое и ладное здоровье. Храни его и слова мои."
     Brain_of_Alex "И я храню твои слова, голубка дряхлая моя. Ни за что не забуду темных вечеров под теплым светом лампадки, твоих сказок на ночь. Покойся с миром, родная няня..."
@@ -287,6 +282,8 @@ label suesid:
     "На следующее утро"
     Brain_of_Alex "Ох... Ну сейчас вроде получше. Самое время оправдываться перед командиром. Еду в Санкт-Петербург."
     Alex "Соскучился я по этому сказочному мрачному миру. Лиза, скажи Григорию,чтобы он готовил мне лошадь! Через 20 минут я выезжаю!"
+    scene vstrecha_starika
+    with Fade(2.5,0,2.5)
     Unknown "(Захлебываясь в слезах, и бубня себе под нос) Сынок... Зачем?.. Ну какой черт тебя взял?.. Революции-удел глупцов, я всегда был уверен, что ты выше всего этого..."
     Unknown "Разве так ты любишь своего папку? Я... Как мне сказать об этом твоей матери? Она ведь, бедная, до сих пор верит, что ты опять ушел на свои гулянки..."
     Unknown "Вольное мое сокровище. Ты был неугомонен. Нет мне смысла жить в этом мире без тебя... Без моего сыночка... С тобой похороню и себя, и будут наши тела навечно стынуть в мёрзлой земле..."
@@ -599,6 +596,7 @@ label zad:
     Brain_of_Alex "Хотя быть может мне остаться тут лежать?"
     Brain_of_Alex "Никто же не заметить, что стало на один труп больше..."
     Brain_of_Alex "Да и стрелять не будут...А если поймают?"
+    menu:
         "Бежать":
             Brain_of_Alex "Как я вообще мог подумать о том, чтобы оставаться тут лежать? Я не хочу кончить как он..."
             Brain_of_Alex "Мне точно лучше будет убежать!"
@@ -691,8 +689,7 @@ label Usenovo:
 label smert:
     jump die1
 label die1:
-    scene died:
-        xalign 0.5 yalign 0.5
+    scene black
     with Fade(2.5,0,2.5)
     play sound purga
     "C грузного земного шара сгинула душа молодого Александра"
@@ -703,3 +700,4 @@ label he:
     jump konech
 label konech:
     return
+
